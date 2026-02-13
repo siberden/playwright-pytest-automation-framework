@@ -35,6 +35,43 @@ A scalable and production-ready end-to-end (E2E) test automation framework built
 
 ## Project Structure
 
+```text
+playwright-pytest-automation-framework/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml                 # GitHub Actions CI pipeline
+│
+├── pages/                         # Page Object Model layer
+│   ├── base_page.py               # Reusable browser actions & waits
+│   ├── home_page.py               # Home page interactions
+│   ├── checkout_page.py           # Checkout flow logic
+│   └── inventory_page.py          # Inventory interactions
+│
+├── tests/                         # Test cases (business flows)
+│   ├── test_login.py
+│   ├── test_checkout.py
+│   ├── test_inventory.py
+│   └── test_smoke.py
+│
+├── utils/                         # Helper utilities
+│   ├── locators.py
+│   ├── data.py
+│   └── config.py
+│
+├── conftest.py                    # Pytest fixtures & driver setup
+├── pytest.ini                     # Markers & configuration
+├── requirements.txt               # Dependencies
+└── README.md
+```
+### Architecture Overview
+
+- **Tests Layer** → Contains business-level test scenarios.
+- **Page Layer (POM)** → Encapsulates UI interactions.
+- **Base Page** → Common reusable Selenium/Playwright actions.
+- **Utils Layer** → Configuration, test data, and locator management.
+- **CI Layer** → Automated execution via GitHub Actions.
+
 
 ---
 
